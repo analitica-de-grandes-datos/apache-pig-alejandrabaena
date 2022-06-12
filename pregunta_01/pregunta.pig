@@ -19,7 +19,7 @@ datos = LOAD 'data.tsv' USING PigStorage('\t')
             num:int          
         );
 
-datosagrup = GROUP data BY letra; 
+datosagrup = GROUP datos BY letra; 
 
 count_letra = FOREACH datosagrup GENERATE group, COUNT(datos); 
 
